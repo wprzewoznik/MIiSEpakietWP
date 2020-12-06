@@ -1,3 +1,15 @@
+#' Title
+#'
+#' @param dane
+#' @param kategoria
+#' @param euro
+#' @param mode
+#' @param substancja
+#'
+#' @return
+#' @export
+#'
+#' @examples
 obl_emisji <- function(dane = input,
                        kategoria = "Passenger Cars",
                        euro = "Euro 5",
@@ -5,18 +17,18 @@ obl_emisji <- function(dane = input,
                        substancja = c("CO", "EC")) {
 
   out <- wskazniki %>%
-    filter(Category %in% kategoria) %>%
-    filter(Euro.Standard %in% euro) %>%
-    filter(Pollutant %in% substancja) %>%
-    filter(Mode %in% mode)
+    dplyr::filter(Category %in% kategoria) %>%
+    dplyr::filter(Euro.Standard %in% euro) %>%
+    dplyr::filter(Pollutant %in% substancja) %>%
+    dplyr::filter(Mode %in% mode)
 
-  out <- inner_join(x = out, y = input, by = c("Segment","Fuel","Technology"))
+  out <- dplyr::inner_join(x = out, y = input, by = c("Segment","Fuel","Technology"))
 
   out <- out %>%
-    mutate(Emisja = Nat * ((Alpha * Procent ^ 2 + Beta * Procent + Gamma + (Delta/Procent))/
+    dplyr::mutate(Emisja = Nat * ((Alpha * Procent ^ 2 + Beta * Procent + Gamma + (Delta/Procent))/
                              (Epsilon * Procent ^ 2 + Zita * Procent + Hta) * (1-Reduction))
     ) %>%
-    select(Category, Fuel, Euro.Standard, Technology, Pollutant, Mode, Segment, Nat, Emisja)
+    dplyr::select(Category, Fuel, Euro.Standard, Technology, Pollutant, Mode, Segment, Nat, Emisja)
 
   return(out)
 }
