@@ -6,9 +6,6 @@
 #' @param mode vector
 #' @param substancja vector
 #'
-#' @return
-#'
-
 obl_emisji <- function(dane = input,
                        kategoria = "Passenger Cars",
                        euro = "Euro 5",

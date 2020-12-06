@@ -23,9 +23,6 @@ obl_emisji(
 
 \item{substancja}{vector}
 }
-\value{
-
-}
 \description{
 Obliczanie emisji niskiej - transport
 }
