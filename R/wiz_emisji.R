@@ -5,7 +5,7 @@
 #' @param kat2 charakter
 #' @param kategoryczna charakter
 #' @param numeryczna charakter
-#'#'
+#'
 #' @examples
 #' p <- wyk(df = wskazniki,
 #'          kat1 = Pollutant,
