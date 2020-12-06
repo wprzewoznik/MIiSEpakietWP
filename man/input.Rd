@@ -5,8 +5,10 @@
 \alias{input}
 \title{Plik do wczytywania danych zewnetrznych koniecznych do dzialania pakietu}
 \format{
-Ramka danych zawiera:
-\describe{}
+data.framed
+\describe{
+
+}
 }
 \source{
 Plik wskazniki pochodzi z EEA - Europejskiej Agenji Srodowiska
