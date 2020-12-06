@@ -1,8 +1,12 @@
-#' @keywords internal
-"_PACKAGE"
-
-# The following block is used by usethis to automatically manage
-# roxygen namespace tags. Modify with care!
-## usethis namespace: start
-## usethis namespace: end
+#' MIiSEpakietWP: Pakiet do obliczania emisji wg EEA i wizualizacji tych danych
+#'
+#' Pakiet powstal w ramach zajec z przedmiotu Metody Inwentaryzacji
+#' i Szacowania Emisji z dr Matuszem Rzeszutkiem. Jego zadaniem jest
+#' obliczanie emisji zanieczyszczen do srodowiska z emisji komunikacyjnej
+#' (samochody, pojazdy) we wskazanych kategoriach. Umoliwia on rowniez
+#' wizualizacje danych dostarczonych wraz z pakietem.
+#'
+#' @docType package
+#' @name MIiSEpakietWP
+#' @import magrittr
 NULL
