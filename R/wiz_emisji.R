@@ -1,15 +1,18 @@
-#' Title
+#' Wizualizacja danych dostarczonych z pakietem wg wskazanych parametrow
 #'
-#' @param df
-#' @param kat1
-#' @param kat2
-#' @param kategoryczna
-#' @param numeryczna
-#'
-#' @return
-#' @export
-#'
+#' @param df data.frame
+#' @param kat1 charakter
+#' @param kat2 charakter
+#' @param kategoryczna charakter
+#' @param numeryczna charakter
+#'#'
 #' @examples
+#' p <- wyk(df = wskazniki,
+#'          kat1 = Pollutant,
+#'          kat2 = "CH4",
+#'          kategoryczna = Category,
+#'          numeryczna = Gamma)
+#'
 wiz_emisji <- function(df = wskazniki,
                 kat1 = Category,
                 kat2 = "Passenger Cars",
