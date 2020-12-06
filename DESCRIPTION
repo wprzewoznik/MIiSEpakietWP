@@ -1,15 +1,24 @@
 Package: MIiSEpakietWP
-Title: What the Package Does (One Line, Title Case)
+Title: Pakiet obliczajacy emisje wg danych EEA i wizualizujacy je
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Wojciech",
+           family = "Przewoznik",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "wprzewoznik@student.agh.edu.pl",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    dplyr,
+    magrittr,
+    purrr,
+    tidyr,
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    ggplot2,
