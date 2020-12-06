@@ -6,12 +6,6 @@
 #' @param kategoryczna charakter
 #' @param numeryczna charakter
 #'
-#' @examples
-#' p <- wyk(df = wskazniki,
-#'          kat1 = Pollutant,
-#'          kat2 = "CH4",
-#'          kategoryczna = Category,
-#'          numeryczna = Gamma)
 #'
 wiz_emisji <- function(df = wskazniki,
                 kat1 = Category,

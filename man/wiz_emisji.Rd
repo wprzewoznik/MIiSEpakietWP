@@ -21,17 +21,8 @@ wiz_emisji(
 
 \item{kategoryczna}{charakter}
 
-\item{numeryczna}{charakter
-#'}
+\item{numeryczna}{charakter}
 }
 \description{
 Wizualizacja danych dostarczonych z pakietem wg wskazanych parametrow
-}
-\examples{
-p <- wyk(df = wskazniki,
-         kat1 = Pollutant,
-         kat2 = "CH4",
-         kategoryczna = Category,
-         numeryczna = Gamma)
-
 }
