@@ -2,7 +2,7 @@
 % Please edit documentation in R/obl_emisji.R
 \name{obl_emisji}
 \alias{obl_emisji}
-\title{Title}
+\title{Obliczanie emisji niskiej - transport}
 \usage{
 obl_emisji(
   dane = input,
@@ -13,11 +13,19 @@ obl_emisji(
 )
 }
 \arguments{
-\item{substancja}{}
+\item{dane}{data.frame}
+
+\item{kategoria}{hcar}
+
+\item{euro}{char}
+
+\item{mode}{vector}
+
+\item{substancja}{vector}
 }
 \value{
 
 }
 \description{
-Title
+Obliczanie emisji niskiej - transport
 }
