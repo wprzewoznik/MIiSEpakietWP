@@ -4,9 +4,6 @@
 #' @format data.framed
 #' \describe{
 #'
-#'
-#'
-#'
 #' }
 #' @examples
 #' \dontrun{
