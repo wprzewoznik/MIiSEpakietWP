@@ -1,15 +1,14 @@
-#' Title
+#' Obliczanie emisji niskiej - transport
 #'
-#' @param dane
-#' @param kategoria
-#' @param euro
-#' @param mode
-#' @param substancja
+#' @param dane data.frame
+#' @param kategoria hcar
+#' @param euro char
+#' @param mode vector
+#' @param substancja vector
 #'
 #' @return
-#' @export
 #'
-#' @examples
+
 obl_emisji <- function(dane = input,
                        kategoria = "Passenger Cars",
                        euro = "Euro 5",
