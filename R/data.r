@@ -1,7 +1,7 @@
 #' Plik zawirajacy dane zewnetrznych koniecznych do dzialania pakietu
 #'
 #' @source Plik wskazniki pochodzi z EEA - Europejskiej Agenji Srodowiska
-#' @format data.frame
+#' @format Ramka danych zawiera nastepujace kolumny:
 #' \describe{
 #'  \item{Category}{Kategoria samochodu}
 #'  \item{Fuel}{Paliwo}
