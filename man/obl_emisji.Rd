@@ -15,7 +15,7 @@ obl_emisji(
 \arguments{
 \item{dane}{data.frame}
 
-\item{kategoria}{hcar}
+\item{kategoria}{char}
 
 \item{euro}{char}
 
