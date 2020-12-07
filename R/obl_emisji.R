@@ -1,7 +1,7 @@
 #' Obliczanie emisji niskiej - transport
 #'
 #' @param dane data.frame
-#' @param kategoria hcar
+#' @param kategoria char
 #' @param euro char
 #' @param mode vector
 #' @param substancja vector
