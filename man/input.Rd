@@ -5,7 +5,7 @@
 \alias{input}
 \title{Plik zawirajacy dane zewnetrznych koniecznych do dzialania pakietu}
 \format{
-data.frame
+Ramka danych zawiera nastepujace kolumny:
 \describe{
 \item{Category}{Kategoria samochodu}
 \item{Fuel}{Paliwo}
