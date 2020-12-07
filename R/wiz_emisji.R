@@ -7,10 +7,10 @@
 #' @param numeryczna charakter
 #'
 wiz_emisji <- function(df = wskazniki,
-                kat1 = Category,
+                kat1 = .data$Category,
                 kat2 = "Passenger Cars",
-                kategoryczna = Segment,
-                numeryczna = Gamma) {
+                kategoryczna = .data$Segment,
+                numeryczna = .data$Gamma) {
 
   kat1 <- rlang::enquo(kat1)
   kategoryczna <- rlang::enquo(kategoryczna)
@@ -21,12 +21,12 @@ wiz_emisji <- function(df = wskazniki,
       dplyr::filter(!!kat1 %in% kat2)
   }
 
-  df %>%
-    ggplot2::ggplot(., ggplot2::aes(x = !!kategoryczna,
-                  y = !!numeryczna,
-                  fill = !!kategoryczna)) +
+
+    ggplot2::ggplot(df, ggplot2::aes(x = !!kategoryczna,
+                                     y = !!numeryczna,
+                                     fill = !!kategoryczna)) +
     ggplot2::geom_boxplot(outlier.shape = NA,
-                 col="blue")+
+                          col="blue")+
     ggplot2::theme_minimal() -> p
 
   wykres <- p + ggplot2::labs(title = "Zalezosc wartosci parametru emisji

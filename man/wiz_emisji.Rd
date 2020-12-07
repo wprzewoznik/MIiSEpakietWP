@@ -6,10 +6,10 @@
 \usage{
 wiz_emisji(
   df = wskazniki,
-  kat1 = Category,
+  kat1 = .data$Category,
   kat2 = "Passenger Cars",
-  kategoryczna = Segment,
-  numeryczna = Gamma
+  kategoryczna = .data$Segment,
+  numeryczna = .data$Gamma
 )
 }
 \arguments{
