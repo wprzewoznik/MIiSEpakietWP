@@ -1,7 +1,7 @@
-#' Plik do wczytywania danych zewnetrznych koniecznych do dzialania pakietu
+#' Plik zawirajacy dane zewnetrznych koniecznych do dzialania pakietu
 #'
 #' @source Plik wskazniki pochodzi z EEA - Europejskiej Agenji Srodowiska
-#' @format data.framed
+#' @format data.frame
 #' \describe{
 #'
 #' }

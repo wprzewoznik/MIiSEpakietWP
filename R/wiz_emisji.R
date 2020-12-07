@@ -6,7 +6,6 @@
 #' @param kategoryczna charakter
 #' @param numeryczna charakter
 #'
-#'
 wiz_emisji <- function(df = wskazniki,
                 kat1 = Category,
                 kat2 = "Passenger Cars",
@@ -37,7 +36,7 @@ wiz_emisji <- function(df = wskazniki,
                               y = "Wartosc wybranego paramteru",
                               caption = "Opracowano na podstawie danych z EEA",
                               color = "Category") +
-                          ggplot2::ylim(0, 500)
+                          ggplot2::ylim(0, 300)
 
   return(wykres)
 }

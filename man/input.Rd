@@ -3,9 +3,9 @@
 \docType{data}
 \name{input}
 \alias{input}
-\title{Plik do wczytywania danych zewnetrznych koniecznych do dzialania pakietu}
+\title{Plik zawirajacy dane zewnetrznych koniecznych do dzialania pakietu}
 \format{
-data.framed
+data.frame
 \describe{
 
 }
@@ -17,7 +17,7 @@ Plik wskazniki pochodzi z EEA - Europejskiej Agenji Srodowiska
 input
 }
 \description{
-Plik do wczytywania danych zewnetrznych koniecznych do dzialania pakietu
+Plik zawirajacy dane zewnetrznych koniecznych do dzialania pakietu
 }
 \examples{
 \dontrun{
