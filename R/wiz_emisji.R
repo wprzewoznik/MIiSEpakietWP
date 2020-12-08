@@ -5,7 +5,7 @@
 #' @param kat2 charakter
 #' @param kategoryczna charakter
 #' @param numeryczna charakter
-#'
+#' @export
 wiz_emisji <- function(df = wskazniki,
                 kat1 = Category,
                 kat2 = "Passenger Cars",
