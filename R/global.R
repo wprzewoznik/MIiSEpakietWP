@@ -1,0 +1,1 @@
+script.utils::globalVariables(".data")
