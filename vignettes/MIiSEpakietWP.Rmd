@@ -47,15 +47,4 @@ Poniższym polecenie wywoła w oknie pomocy listę funkcji pakietu, oraz ich skr
 help(package = "giosimport")
 ```
 
-Zalecam załadowanie dodatkowych pakietów, z których korzystam w celu prezentacji wyników.
-
-```{r, results='hide'}
-library(dplyr)
-library(purrr)
-library(ggplot2)
-library(rlang)
-library(tidyr)
-library(openxlsx)
-library(magrittr)
-```
 
