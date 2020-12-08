@@ -1,8 +1,9 @@
 ---
-title: "MIiSEpakietWP"
+title: "MIiSEpakietWP - wprowadzeni do pakietu"
+date:   "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{MIiSEpakietWP}
+  %\VignetteIndexEntry{Winieta pakietu MIiSEpakietWP}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,13 +11,58 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  echo = T, 
+  message = F, 
+  warning = F,
   comment = "#>"
 )
 ```
 
+Wczytanie pakietu:
 ```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
 library(MIiSEpakietWP)
 ```
 
 
-Winieta pakietu, autor Wojciech Przewoznik
+***
+# 1) Wprowadzenie
+
+Autorem pakietu jest Wojciech Przewoznik (mail: w.przewoznik@gmail.com, nr indeksu: 303998). Pakiet powstal w ramach cwiczen projektowych z przedmiotu Metody Inwentaryzacji i Szacowania Emisji. Prowadzcy: dr Mateusz Reszutek. Zajecia odbywaly sie w semestrze zimowym (semestr nr 5.) roku akademickiego 2020/2021 na 3. roku kierunku Geoinformacja.
+
+Pakiet powstal na bazie dokumentu/raportu "EMEP/EEA air polutanat emission inventory guidbook 2019" autorstwa EEA - Eureopean Enviromental Agency.
+
+***
+#2) Instalacja pakietu
+
+Repozytorium pakietu znajduje się na portalu [Github](https://github.com/wprzewoznik). Do jego instalacji bezposrednio z Github'a konieczny bedzie pakiet `devtools`, który pobierze repozyroriu `MIiSEpakietWP` i zainstaluje pakiet na komputerze.
+
+```{r setup, eval=FALSE}
+# devtools, sprawdzamy czy jest, jeśli nie to instalujemy i wczytujemy
+if(!require(devtools)) {install.packages("devtools"); require(devtools)}
+
+# instalcja pakietu gios_import
+devtools::install_github("wprzewoznik/MIiSEpakietWP")
+library(MIiSEpakietWP)
+```
+
+
+
+Poniższym polecenie wywoła w oknie pomocy listę funkcji pakietu, oraz ich skrócony opis. Możecie zauważyć, ze wrzystkie nazwy funkcji zaczynają się od wyrażenia `gios_`, dzięli czemu bardzo szybkow wyświetlają się w systemie podpowiedzi [Rstudio](https://rstudio.com/).
+
+```{r, eval=F}
+help(package = "giosimport")
+```
+
+Zalecam załadowanie dodatkowych pakietów, z których korzystam w celu prezentacji wyników.
+
+```{r, results='hide'}
+library(dplyr)
+library(purrr)
+library(ggplot2)
+library(rlang)
+library(tidyr)
+library(openxlsx)
+library(magrittr)
+```
+
