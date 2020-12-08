@@ -47,4 +47,22 @@ Poniższym polecenie wywoła w oknie pomocy listę funkcji pakietu, oraz ich skr
 help(package = "giosimport")
 ```
 
+***
+# 3) Obiekty z danmi dostarczone z pakietem
+
+Wraz z pakietem, w pliku 'plikidane.rda' w folderze 'data' znajduja sie dane dostarczane wraz z pakietem. Wykorzystywane sa one w funkcji do obliczen dla wartosci domyslnych, ale takze mozna je wywolac i korzystac z nich jak z osobnych dancyh.
+
+
+## 3.1) wskazniki
+
+Plik zawiera dane
+
+## 3.2) input
+
+***
+# 3) Funkcja obl_emisji()
+
+
+
+
 
