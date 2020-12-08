@@ -5,7 +5,7 @@
 \title{Obliczanie emisji niskiej - transport}
 \usage{
 obl_emisji(
-  dane = .data$input,
+  dane = input,
   kategoria = "Passenger Cars",
   euro = "Euro 5",
   mode = "",

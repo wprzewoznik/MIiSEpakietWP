@@ -5,11 +5,11 @@
 \title{Wizualizacja danych dostarczonych z pakietem wg wskazanych parametrow}
 \usage{
 wiz_emisji(
-  df = .data$wskazniki,
-  kat1 = .data$Category,
+  df = wskazniki,
+  kat1 = Category,
   kat2 = "Passenger Cars",
-  kategoryczna = .data$Segment,
-  numeryczna = .data$Gamma
+  kategoryczna = Segment,
+  numeryczna = Gamma
 )
 }
 \arguments{

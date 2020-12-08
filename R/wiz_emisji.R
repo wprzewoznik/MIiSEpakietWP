@@ -6,11 +6,11 @@
 #' @param kategoryczna charakter
 #' @param numeryczna charakter
 #'
-wiz_emisji <- function(df = .data$wskazniki,
-                kat1 = .data$Category,
+wiz_emisji <- function(df = wskazniki,
+                kat1 = Category,
                 kat2 = "Passenger Cars",
-                kategoryczna = .data$Segment,
-                numeryczna = .data$Gamma) {
+                kategoryczna = Segment,
+                numeryczna = Gamma) {
 
   kat1 <- rlang::enquo(kat1)
   kategoryczna <- rlang::enquo(kategoryczna)
