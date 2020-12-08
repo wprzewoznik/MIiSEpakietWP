@@ -7,7 +7,12 @@ Authors@R:
            role = c("aut", "cre"),
            email = "wprzewoznik@student.agh.edu.pl",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Pakiet stworzony w ramach zajec z przedmiotu 
+    Metody Inwentaryzacji i Szacowania Emisji z dr Matuszem Rzeszutkiem.
+    Pakiet ma za zadanie obliczac emisje z transportu, 
+    na podstawie dostarczonych lub wczytanych danych.
+    Pakiet daje rowniez mozliwosc wizualizacji danych 
+    dostarczonych wraz z pakietem.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
