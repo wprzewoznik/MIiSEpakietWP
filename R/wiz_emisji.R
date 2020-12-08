@@ -6,7 +6,7 @@
 #' @param kategoryczna charakter
 #' @param numeryczna charakter
 #'
-wiz_emisji <- function(df = wskazniki,
+wiz_emisji <- function(df = .data$wskazniki,
                 kat1 = .data$Category,
                 kat2 = "Passenger Cars",
                 kategoryczna = .data$Segment,

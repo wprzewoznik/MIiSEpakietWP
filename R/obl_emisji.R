@@ -6,19 +6,19 @@
 #' @param mode vector
 #' @param substancja vector
 #'
-obl_emisji <- function(dane = input,
+obl_emisji <- function(dane = .data$input,
                        kategoria = "Passenger Cars",
                        euro = "Euro 5",
                        mode = "",
                        substancja = c("CO", "EC")) {
 
-  out <- wskazniki %>%
+  out <- .data$wskazniki %>%
     dplyr::filter( .data$Category %in% kategoria) %>%
     dplyr::filter( .data$Euro.Standard %in% euro) %>%
     dplyr::filter( .data$Pollutant %in% substancja) %>%
     dplyr::filter( .data$Mode %in% mode)
 
-  out <- dplyr::inner_join(x = out, y = input, by = c("Segment","Fuel","Technology"))
+  out <- dplyr::inner_join(x = out, y = .data$input, by = c("Segment","Fuel","Technology"))
 
   out <- out %>%
     dplyr::mutate(Emisja = .data$Nat * (( .data$Alpha *  .data$Procent ^ 2 + .data$Beta * .data$Procent + .data$Gamma + ( .data$Delta/ .data$Procent))/

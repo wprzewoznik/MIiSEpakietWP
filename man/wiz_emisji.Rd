@@ -5,7 +5,7 @@
 \title{Wizualizacja danych dostarczonych z pakietem wg wskazanych parametrow}
 \usage{
 wiz_emisji(
-  df = wskazniki,
+  df = .data$wskazniki,
   kat1 = .data$Category,
   kat2 = "Passenger Cars",
   kategoryczna = .data$Segment,
