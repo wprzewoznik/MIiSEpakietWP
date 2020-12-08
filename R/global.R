@@ -1,1 +1,1 @@
-script.utils::globalVariables(".data")
+utils::globalVariables(".data")
