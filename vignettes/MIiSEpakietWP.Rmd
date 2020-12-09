@@ -55,7 +55,13 @@ Wraz z pakietem, w pliku 'plikidane.rda' w folderze 'data' znajduja sie dane dos
 
 ## 3.1) wskazniki
 
-Plik zawiera dane
+Plik zawiera dane dostarczone wraz z podrecznikiem, na bazie ktorego stworzono niniejszy pakiet.
+
+
+```{r}
+
+```
+
 
 ## 3.2) input
 
