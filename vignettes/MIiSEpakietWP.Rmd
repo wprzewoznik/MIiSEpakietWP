@@ -39,8 +39,6 @@ devtools::install_github("wprzewoznik/MIiSEpakietWP")
 library(MIiSEpakietWP)
 ```
 
-
-
 Poniższym polecenie wywoła w oknie pomocy listę funkcji pakietu, oraz ich skrócony opis. Możecie zauważyć, ze wrzystkie nazwy funkcji zaczynają się od wyrażenia `gios_`, dzięli czemu bardzo szybkow wyświetlają się w systemie podpowiedzi [Rstudio](https://rstudio.com/).
 
 ```{r, eval=F}
@@ -57,18 +55,75 @@ Wraz z pakietem, w pliku 'plikidane.rda' w folderze 'data' znajduja sie dane dos
 
 Plik zawiera dane dostarczone wraz z podrecznikiem, na bazie ktorego stworzono niniejszy pakiet.
 
-
-```{r}
-
+Podglad poczatkowych wierszy obiektu z danymi:
+```{r echo=FALSE}
+head(MIiSEpakietWP::wskazniki)
 ```
 
+W pliku znajduja sie nastepujace kolumny:
+```{r echo=FALSE}
+colnames(MIiSEpakietWP::wskazniki)
+```
+
+- Category -> rodzaj pojazdu,
+- Fuel-> ,
+- Segment-> ,
+- Euro.Standard-> ,
+- Technology-> ,
+- Pollutant-> ,
+- Mode-> ,
+- Alpha, Beta, Gamma, Delta, Epsilon, Zita, Hta -> ,
+- Reduction -> ,
+- Bio (Reduction)-> ,
+- Procent-> ,
 
 ## 3.2) input
+
+Obiekt 'input' zawiera dane przykladowe, wykorzystywane do obliczania emisji w funkcji 'obl_emisji()'. 
+
+Podglad dancych:
+```{r echo=FALSE}
+head(MIiSEpakietWP::input)
+```
+
+Obiekt zawiera nastepujace kolumny:
+```{r}
+colnames(MIiSEpakietWP::input)
+```
+
+- Nat -> ,
+- Segment-> typ pojazdu,
+- Fuel-> rodzaj plaiwa, ktorym jest napedzany,
+- Technology -> technologia oczyszczania spalin - zmiejszania emisji,
 
 ***
 # 3) Funkcja obl_emisji()
 
+Funkcja 'obl_emisji()' wyznacza emisje dla podanego obiektu z danymi, bedacego parametrem podawanym na wejsciu. Obicza ja w sopsob identyczny jak w arkuszu klakulacyjnym dostarczonym do podrecznika, na bazie ktorego powstal niniejszy pakiet.
+Wartosc emisji obliczana jest w funkcji wg nastepujacych etapow:
+
+- filtracja dancyh z obiektu 'wskazniki' wg parametrow podanych na wejsciu funkcji,
+- polaczenie w jeden, wynikowy obiekt, przefiltrowanych danych i danych wejsciowcych,
+- poprzez funkcje 'mutate' obliczenie dla kazdego wiersza z danymi wielkosci emisji,
+- wybranie najwazniejszych kolumn, w tym kolumny z wynikiem,
+- zwrocenie na koniec dzialania funkcji obiektu wynikowego z danymi.
 
 
+***
+# 4) Funkcja wiz_emisji()
 
+Dzieki ninjeszej funkcji mozna uzyskac wizualizacje danych, m. in. danych dostarczonych wraz z pakietem w obiekcie 'wskazniki'. 
+
+Ponizej przestawiono wykres stworzony przez funkcje, przy domyslnych parametrach:
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+#POPRAWIC FUNKCJE
+#MIiSEpakietWP::wiz_emisji()
+```
+
+Funkcja sklada sie z nastepujacych elementow:
+- przypisanie paramertrow - funkcja 'enquo()',
+- sprawdzenie braku dnaych,
+- stworzenie wykresu o podstawowych parametrach i zapisanie go do obiektu,
+- edycja wygladu wykresu poprzez modyfikacje poszczegolnych jego parametrow,
+- zwrocenie gtowego wykrsu bedacego wynikiem dzialania funkcji.
 
