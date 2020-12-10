@@ -10,3 +10,5 @@
 #' @name MIiSEpakietWP
 #' @import magrittr
 NULL
+
+utils::globalVariables(c("input", "wskazniki"))
