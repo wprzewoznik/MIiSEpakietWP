@@ -167,12 +167,16 @@ tmp %>%  glimpse()
 ***
 # 4) Funkcja wiz_emisji()
 
-Dzieki ninjeszej funkcji mozna uzyskac wizualizacje danych, m. in. danych dostarczonych wraz z pakietem w obiekcie 'wskazniki'. 
+Dzieki ninjeszej funkcji mozna wizualizowac dane, m. in. dane dostarczone wraz z pakietem w obiekcie 'wskazniki'. 
+
+Dokumntacja funkcji:
+```{r echo=TRUE}
+?MIiSEpakietWP::wiz_emisji()
+```
 
 Ponizej przestawiono wykres stworzony przez funkcje, przy domyslnych parametrach:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-#POPRAWIC FUNKCJE
-#MIiSEpakietWP::wiz_emisji()
+wiz_emisji()
 ```
 
 Funkcja sklada sie z nastepujacych elementow:
