@@ -1,5 +1,5 @@
 ---
-title: "MIiSEpakietWP - wprowadzeni do pakietu"
+title: "MIiSEpakietWP - wprowadzenie do pakietu"
 date:   "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -18,42 +18,80 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+***
+
+**Wojciech Przewoznik**  
+Nr indeksu: 303988
+**e-mail:** *[wprzewoznik@student.agh.edu.pl](wprzewoznik@student.agh.edu.pl)*
+
+Akademia Gorniczo-Hutnicza im. Stanislawa Staszica w Krakowie
+Wydział Geodezji Górniczej i Inżynierii Środowiska
+Kierunke: Geoinformacja 
+Rok studiow: III rok
+Semestr studiow: 5. semestr
+Semestr: zimowy
+Rok akademicki: 2020/2021
+Przedmiot: Metody inwentaryzacji i szacowania emisji
+
+***
+
+
 ***
 # 1) Wprowadzenie
 
-Autorem pakietu jest Wojciech Przewoznik (mail: w.przewoznik@gmail.com, nr indeksu: 303998). Pakiet powstal w ramach cwiczen projektowych z przedmiotu Metody Inwentaryzacji i Szacowania Emisji. Prowadzcy: dr Mateusz Reszutek. Zajecia odbywaly sie w semestrze zimowym (semestr nr 5.) roku akademickiego 2020/2021 na 3. roku kierunku Geoinformacja.
+Pakiet powstal w ramach cwiczen projektowych z przedmiotu Metody Inwentaryzacji i Szacowania Emisji. Prowadzcy: dr Mateusz Reszutek.
 
 Pakiet powstal na bazie dokumentu/raportu "EMEP/EEA air polutanat emission inventory guidbook 2019" autorstwa EEA - Eureopean Enviromental Agency.
 
-***
-#2) Instalacja pakietu
+Służy do obliczania emisji zanieczyszczeń emitowanych przez pojazdy z silnikami spalinowymi i wizualizacji tych danych. Funkcje pakietu korzystają z danych dołączonych do pakietu.   
+Dane w pliku 'wskazniki' sa przetworzonymi danymi pochodzacymi z surowego pliku z danymi:  `1.A.3.b.i-iv Road Transport Appendix 4 Emission Factors 2019.xlsx`, dostarczonego do raportu. Plik nie znajduje się w pakiecie. Został on przetworzony, a nastepnie zapisany do obiektu danych `wskazniki`. Dodatkowo pakiet wykorzystuje obiekt `input`.
 
-Repozytorium pakietu znajduje się na portalu [Github](https://github.com/wprzewoznik). Do jego instalacji bezposrednio z Github'a konieczny bedzie pakiet `devtools`, który pobierze repozyroriu `MIiSEpakietWP` i zainstaluje pakiet na komputerze.
+***
+# 2) Instalacja pakietu
+
+Repozytorium pakietu znajduje się na portalu [GitHub](https://github.com/wprzewoznik). Do jego instalacji bezposrednio z Github'a konieczny bedzie pakiet `devtools`, który pobierze repozyroriu `MIiSEpakietWP` i zainstaluje pakiet na komputerze.
 
 ```{r setup, eval=FALSE}
-# devtools, sprawdzamy czy jest, jeśli nie to instalujemy i wczytujemy
+knitr::opts_chunk$set(echo = TRUE)
+# pakiet devtools - sprawdzenie czy jest zainstalowany na komputerze, jeśli nie to jest instalowany i wczytany
 if(!require(devtools)) {install.packages("devtools"); require(devtools)}
 
-# instalcja pakietu gios_import
+# instalcja pakietu MIiSEpakietWP
 devtools::install_github("wprzewoznik/MIiSEpakietWP")
 library(MIiSEpakietWP)
 ```
 
-Poniższym polecenie wywoła w oknie pomocy listę funkcji pakietu, oraz ich skrócony opis. Możecie zauważyć, ze wrzystkie nazwy funkcji zaczynają się od wyrażenia `gios_`, dzięli czemu bardzo szybkow wyświetlają się w systemie podpowiedzi [Rstudio](https://rstudio.com/).
+Poniższym polecenie wywoła w oknie pomocy listę funkcji pakietu, oraz ich skrócony opis:
+```{r echo=TRUE}
+help(package = "MIiSEpakietWP")
+```
 
-```{r, eval=F}
-help(package = "giosimport")
+Do pelnego, poprawnego dzialania pakietu zalecne jest wczytanie nastepujacych pakietow:
+```{r results='hide'}
+library(dplyr)
+library(magrittr)
+library(qpdf)
+library(utils)
+library(rlang)
+library(stats)
+library(ggplot2)
+library(tidyverse)
 ```
 
 ***
-# 3) Obiekty z danmi dostarczone z pakietem
+# 3) Obiekty z danymi dostarczone z pakietem
 
 Wraz z pakietem, w pliku 'plikidane.rda' w folderze 'data' znajduja sie dane dostarczane wraz z pakietem. Wykorzystywane sa one w funkcji do obliczen dla wartosci domyslnych, ale takze mozna je wywolac i korzystac z nich jak z osobnych dancyh.
-
-
+        
 ## 3.1) wskazniki
 
 Plik zawiera dane dostarczone wraz z podrecznikiem, na bazie ktorego stworzono niniejszy pakiet.
+
+Opis danych:
+```{r echo=TRUE}
+?MIiSEpakietWP::wskazniki
+```
 
 Podglad poczatkowych wierszy obiektu z danymi:
 ```{r echo=FALSE}
@@ -81,13 +119,17 @@ colnames(MIiSEpakietWP::wskazniki)
 
 Obiekt 'input' zawiera dane przykladowe, wykorzystywane do obliczania emisji w funkcji 'obl_emisji()'. 
 
+Opis danych:
+```{r echo=TRUE}
+?MIiSEpakietWP::input
+```
 Podglad dancych:
 ```{r echo=FALSE}
 head(MIiSEpakietWP::input)
 ```
 
 Obiekt zawiera nastepujace kolumny:
-```{r}
+```{r echo=FALSE}
 colnames(MIiSEpakietWP::input)
 ```
 
@@ -99,7 +141,7 @@ colnames(MIiSEpakietWP::input)
 ***
 # 3) Funkcja obl_emisji()
 
-Funkcja 'obl_emisji()' wyznacza emisje dla podanego obiektu z danymi, bedacego parametrem podawanym na wejsciu. Obicza ja w sopsob identyczny jak w arkuszu klakulacyjnym dostarczonym do podrecznika, na bazie ktorego powstal niniejszy pakiet.
+Funkcja 'obl_emisji()' wyznacza emisje dla podanego obiektu z danymi, bedacego parametrem podawanym na wejsciu. Obicza ja w sposob identyczny jak w arkuszu klakulacyjnym dostarczonym do podrecznika, na bazie ktorego powstal niniejszy pakiet.
 Wartosc emisji obliczana jest w funkcji wg nastepujacych etapow:
 
 - filtracja dancyh z obiektu 'wskazniki' wg parametrow podanych na wejsciu funkcji,
@@ -107,6 +149,17 @@ Wartosc emisji obliczana jest w funkcji wg nastepujacych etapow:
 - poprzez funkcje 'mutate' obliczenie dla kazdego wiersza z danymi wielkosci emisji,
 - wybranie najwazniejszych kolumn, w tym kolumny z wynikiem,
 - zwrocenie na koniec dzialania funkcji obiektu wynikowego z danymi.
+
+Dokumntacja funkcji:
+```{r echo=TRUE}
+?MIiSEpakietWP::obl_emisji()
+```
+
+W wyniku dzialania funkcji otrzymujemy obiekt z danymi:
+```{r echo=TRUE}
+#MIiSEpakietWP::obl_emisji() -> nowy
+#nowy %>% glimpse()
+```
 
 
 ***
