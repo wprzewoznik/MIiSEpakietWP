@@ -1,11 +1,16 @@
-#' Wizualizacja danych dostarczonych z pakietem wg wskazanych parametrow
+#' Funkcja do Wizualizacji danych dostarczonych z pakietem
 #'
 #' @param df data.frame
-#' @param kat1 charakter
-#' @param kat2 charakter
-#' @param kategoryczna charakter
-#' @param numeryczna charakter
+#' @param kat1 char
+#' @param kat2 char
+#' @param kategoryczna char
+#' @param numeryczna char
 #' @export
+#'
+#' @examples
+#' #Wygenerowanie wykresu dla danych domuslnych
+#' wiz_emisji()
+#'
 wiz_emisji <- function(df = wskazniki,
                 kat1 = Category,
                 kat2 = "Passenger Cars",
@@ -36,7 +41,7 @@ wiz_emisji <- function(df = wskazniki,
                               y = "Wartosc wybranego paramteru",
                               caption = "Opracowano na podstawie danych z EEA",
                               color = "Category")+
-                ggplot2::ylim(0, 300)
+                ggplot2::ylim(0, 100)
 
   return(wykres)
 }

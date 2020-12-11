@@ -2,7 +2,7 @@
 % Please edit documentation in R/wiz_emisji.R
 \name{wiz_emisji}
 \alias{wiz_emisji}
-\title{Wizualizacja danych dostarczonych z pakietem wg wskazanych parametrow}
+\title{Funkcja do Wizualizacji danych dostarczonych z pakietem}
 \usage{
 wiz_emisji(
   df = wskazniki,
@@ -15,14 +15,19 @@ wiz_emisji(
 \arguments{
 \item{df}{data.frame}
 
-\item{kat1}{charakter}
+\item{kat1}{char}
 
-\item{kat2}{charakter}
+\item{kat2}{char}
 
-\item{kategoryczna}{charakter}
+\item{kategoryczna}{char}
 
-\item{numeryczna}{charakter}
+\item{numeryczna}{char}
 }
 \description{
-Wizualizacja danych dostarczonych z pakietem wg wskazanych parametrow
+Funkcja do Wizualizacji danych dostarczonych z pakietem
+}
+\examples{
+#Wygenerowanie wykresu dla danych domuslnych
+wiz_emisji()
+
 }
