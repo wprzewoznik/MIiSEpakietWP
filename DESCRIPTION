@@ -20,6 +20,9 @@ Imports:
     dplyr,
     magrittr,
     purrr,
+    qpdf,
+    ggplot2,
+    utils,
     tidyr,
     rlang
 Roxygen: list(markdown = TRUE)
@@ -27,5 +30,4 @@ RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown,
-    ggplot2,
 VignetteBuilder: knitr

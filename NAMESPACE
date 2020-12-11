@@ -2,4 +2,6 @@
 
 export(obl_emisji)
 export(wiz_emisji)
+import(dplyr)
 import(magrittr)
+import(qpdf)

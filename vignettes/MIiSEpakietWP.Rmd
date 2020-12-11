@@ -68,15 +68,15 @@ help(package = "MIiSEpakietWP")
 ```
 
 Do pelnego, poprawnego dzialania pakietu zalecne jest wczytanie nastepujacych pakietow:
-```{r results='hide'}
-library(dplyr)
-library(magrittr)
-library(qpdf)
-library(utils)
-library(rlang)
-library(stats)
-library(ggplot2)
-library(tidyverse)
+```{r echo=TRUE, results='hide'}
+#library(dplyr)
+#library(magrittr)
+#library(qpdf)
+#library(utils)
+#library(rlang)
+#library(stats)
+#library(ggplot2)
+#library(tidyverse)
 ```
 
 ***
