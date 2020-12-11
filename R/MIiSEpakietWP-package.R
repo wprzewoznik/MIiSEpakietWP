@@ -14,6 +14,8 @@
 #' @docType package
 #' @name MIiSEpakietWP
 #' @import magrittr
+#' @import dplyr
+#' @import qpdf
 NULL
 
 utils::globalVariables(c("input", "wskazniki"))
