@@ -2,7 +2,7 @@
 % Please edit documentation in R/obl_emisji.R
 \name{obl_emisji}
 \alias{obl_emisji}
-\title{Obliczanie emisji niskiej - transport}
+\title{Funkcja do bliczanie emisji pochodzacej z transportu}
 \usage{
 obl_emisji(
   dane = input,
@@ -13,16 +13,29 @@ obl_emisji(
 )
 }
 \arguments{
-\item{dane}{data.frame}
+\item{dane}{data.frame - obiekt wejsciowy}
 
-\item{kategoria}{char}
+\item{kategoria}{char - kategoria pojazdu}
 
-\item{euro}{char}
+\item{euro}{char - norma spalin}
 
-\item{mode}{vector}
+\item{mode}{char - tryb jazdy}
 
-\item{substancja}{vector}
+\item{substancja}{char - mitowane zanieczyszczenie}
 }
 \description{
-Obliczanie emisji niskiej - transport
+Funkcja oblicza emisje na korzystajac z danych zawartych w obiekcie
+\code{wskazniki}, a tazke z obiektu \code{input}.
+W obiekcie \code{wskazniki} zapisane sa dane o emisji, prygotowane wczesniej.
+W obiekcie \code{input} zapisane sa stworzone losowo dane o natezenia ruchu.
+}
+\details{
+Wzor do obliczen emisji:
+Emisja = Nat x ((Alpha  x Procent^2 + Beta x Procent + Gamma +
+(Delta/Procent)) / (Epsilon x Procent^2 + Zita x Procent + Hta) x (1- Reduction))
+}
+\examples{
+# Obliczenie emisji dla parametrow domyslnych
+  tmp <- obl_emisji()
+
 }
