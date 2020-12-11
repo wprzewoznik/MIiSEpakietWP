@@ -68,15 +68,15 @@ help(package = "MIiSEpakietWP")
 ```
 
 Do pelnego, poprawnego dzialania pakietu zalecne jest wczytanie nastepujacych pakietow:
-```{r echo=TRUE, results='hide'}
-#library(dplyr)
-#library(magrittr)
-#library(qpdf)
-#library(utils)
-#library(rlang)
-#library(stats)
-#library(ggplot2)
-#library(tidyverse)
+```{r, results='hide'}
+library(dplyr)
+library(magrittr)
+library(qpdf)
+library(utils)
+library(rlang)
+library(stats)
+library(ggplot2)
+library(tidyverse)
 ```
 
 ***
@@ -157,8 +157,7 @@ Dokumntacja funkcji:
 
 W wyniku dzialania funkcji otrzymujemy obiekt z danymi:
 ```{r echo=TRUE}
-#MIiSEpakietWP::obl_emisji() -> nowy
-#nowy %>% glimpse()
+#MIiSEpakietWP::obl_emisji()
 ```
 
 
