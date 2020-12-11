@@ -40,8 +40,8 @@ wiz_emisji <- function(df = wskazniki,
                               x = "Wybrana kategoria",
                               y = "Wartosc wybranego paramteru",
                               caption = "Opracowano na podstawie danych z EEA",
-                              color = "Category")+
-                ggplot2::ylim(0, 100)
+                              color = "Category") +
+                ggplot2::ylim(0, 40)
 
   return(wykres)
 }
