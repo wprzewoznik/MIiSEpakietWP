@@ -18,6 +18,9 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r dodatkowe ustawienia, include=FALSE, results='hide'}
+library(MIiSEpakietWP)
+```
 
 ***
 
@@ -157,9 +160,9 @@ Dokumntacja funkcji:
 
 W wyniku dzialania funkcji otrzymujemy obiekt z danymi:
 ```{r echo=TRUE}
-#MIiSEpakietWP::obl_emisji()
+obl_emisji() -> tmp
+tmp %>%  glimpse()
 ```
-
 
 ***
 # 4) Funkcja wiz_emisji()
