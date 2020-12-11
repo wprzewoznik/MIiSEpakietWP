@@ -1,26 +1,9 @@
 #' Plik zawirajacy dane zewnetrznych koniecznych do dzialania pakietu
 #'
-#' @source Plik wskazniki pochodzi z EEA - Europejskiej Agenji Srodowiska
-#' @format Ramka danych zawiera nastepujace kolumny:
-#' \describe{
-#'  \item{Category}{Kategoria samochodu}
-#'  \item{Fuel}{Paliwo}
-#'  \item{Segment}{Segment - wielkosc}
-#'  \item{Euro.Standard}{Standard EURO}
-#'  \item{Technology}{Technologia oczyszczania}
-#'  \item{Pollutant}{Rodzaj zanieczyszczenia}
-#'  \item{Mode}{Mode}
-#'  \item{Alpha}{Parametr Alpha}
-#'  \item{Beta}{Parametr Beta}
-#'  \item{Gamma}{Parametr Gamma}
-#'  \item{Delta}{Parametr Delta}
-#'  \item{Epsilon}{Parametr Epsilon}
-#'  \item{Zita}{Parametr Zita}
-#'  \item{Hta}{Parametr Hta}
-#'  \item{Reduction}{Redukcja}
-#'  \item{Bio}{Bioredukcja}
-#'  \item{Procent}{Wielkosc procentowa}
-#' }
+#' @source Obiekt wskazniki powstal na podstawie arkusza z danymi pochodzacymi
+#'         z EEA - Europejskiej Agnecji Srodowiska.
+#'         Obiekt input zostal przygotowany wczesniej i zapisany do obiektu
+#' @format Szczegolowe opisy danych dstepne sa w ich dokumentacji
 #' @examples
 #' \dontrun{
 #'  plikdane
